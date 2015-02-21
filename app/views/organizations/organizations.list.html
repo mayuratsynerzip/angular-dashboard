@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" data-ng-model="searchText.name"/>
+          <div class="input-group-btn">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-filter"></span> Filter
+            </button>
+            <button class="btn btn-default" ui-sref="organizations.add">
+              <span class="glyphicon glyphicon-plus"></span> Add organization
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <br>
+  <div class="row"  style="margin-top: 10px">
+    <div ng-repeat="organization in organizations | filter:searchText">
+      <div class="col-xs-12 col-md-4">
+        <div class="panel-wrapper">
+          <div class="panel-title">
+            <a ui-sref="organizations.view({'orgId':organization._id})">{{organization.name}}</a>
+          </div>
+          <div class="panel-stage">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="panel-wrapper">
+                  <div class="panel-title">
+                    Billable Vs Bench
+                  </div>
+                  <div class="panel-stage">
+                    <img src="../../images/area-chart.png" class="img-responsive">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-notes">
+            Owned by {{organization.owner.firstName}} {{organization.owner.lastName}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

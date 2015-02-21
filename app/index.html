@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/selectize/dist/css/selectize.css" />
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body ng-app="dashboardApp">
@@ -32,8 +33,8 @@
             <ul class="nav navbar-nav">
               <li data-toggle="collapse" data-target="#myNavBar"><a ui-sref="dashboard" class="active">Dashboard</a></li>
               <li data-toggle="collapse" data-target="#myNavBar"><a ui-sref="organizations.list">Organizations</a></li>
-              <li data-toggle="collapse" data-target="#myNavBar"><a ui-sref="projects">Projects</a></li>
-              <li data-toggle="collapse" data-target="#myNavBar"><a ui-sref="employees">Employees</a></li>
+              <li data-toggle="collapse" data-target="#myNavBar"><a ui-sref="projects.list">Projects</a></li>
+              <li data-toggle="collapse" data-target="#myNavBar"><a ui-sref="employees.list">Employees</a></li>
             </ul>
           </div>
         </div>
@@ -47,12 +48,10 @@
     <div class="footer">
       <nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse" role="navigation">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#"></a>
+          &copy;
         </div>
       </nav>
     </div>
-
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -80,6 +79,9 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/angular-charts/dist/angular-charts.js"></script>
+    <script src="bower_components/sifter/sifter.js"></script>
+    <script src="bower_components/microplugin/src/microplugin.js"></script>
+    <script src="bower_components/selectize/dist/js/selectize.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -89,12 +91,24 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/dashboard.js"></script>
         <script src="scripts/services/dashboard.js"></script>
-        <script src="scripts/controllers/organizations.js"></script>
+        <script src="scripts/controllers/organizations/organizations.js"></script>
         <script src="scripts/services/organizations.js"></script>
-        <script src="scripts/controllers/organizations.list.js"></script>
-        <script src="scripts/controllers/organizations.view.js"></script>
-        <script src="scripts/controllers/organizations.edit.js"></script>
-        <script src="scripts/controllers/organizations.add.js"></script>
+        <script src="scripts/controllers/organizations/organizations.list.js"></script>
+        <script src="scripts/controllers/organizations/organizations.view.js"></script>
+        <script src="scripts/controllers/organizations/organizations.edit.js"></script>
+        <script src="scripts/controllers/organizations/organizations.add.js"></script>
+        <script src="scripts/controllers/projects/projects.js"></script>
+        <script src="scripts/services/projects.js"></script>
+        <script src="scripts/controllers/projects/projects.add.js"></script>
+        <script src="scripts/controllers/projects/projects.edit.js"></script>
+        <script src="scripts/controllers/projects/projects.list.js"></script>
+        <script src="scripts/controllers/projects/projects.view.js"></script>
+        <script src="scripts/controllers/employees/employees.js"></script>
+        <script src="scripts/controllers/employees/employees.add.js"></script>
+        <script src="scripts/controllers/employees/employees.edit.js"></script>
+        <script src="scripts/controllers/employees/employees.list.js"></script>
+        <script src="scripts/controllers/employees/employees.view.js"></script>
+        <script src="scripts/services/employees.js"></script>
         <!-- endbuild -->
 </body>
 </html>

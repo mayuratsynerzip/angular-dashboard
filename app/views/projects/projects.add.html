@@ -1,0 +1,20 @@
+<div class="container">
+  <form role="form">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="prj.name" placeholder="Enter project Name">
+    </div>
+    <div class="form-group">
+      <select class="form-control"  ng-model="prj.owner" ng-options='(emp.firstName + " " + emp.lastName) for emp in employees track by emp._id' required></select>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="prj.noOfPeople" placeholder="Total Headcount">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="prj.billableCount" placeholder="Billable Count" >
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control"  ng-model="prj.benchCount" placeholder="Bench Strength">
+    </div>
+    <button class="btn btn-primary" ng-click="addProject()"><i class="glyphicon glyphicon-plus-sign"></i>&nbsp;Add</button>
+  </form>
+</div>

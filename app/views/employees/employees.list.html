@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" data-ng-model="searchText.name"/>
+          <div class="input-group-btn">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-filter"></span> Filter
+            </button>
+            <button class="btn btn-default" ui-sref="employees.add">
+              <span class="glyphicon glyphicon-plus"></span> Add Employee
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div ng-repeat ="emp in employees">
+      <div class="col-xs-12 col-md-4">
+        <div class="panel-wrapper">
+          <div class="panel-title">
+            {{emp.firstName}} {{emp.lastName}} <span class="badge">{{emp.jobTitle}}</span>
+          </div>
+          <div class="panel-stage">
+            <div class="row">
+              <div class="col-xs-8 col-md-6">
+                <div class="panel-wrapper">
+                  <div class="panel-title">
+
+                  </div>
+                  <div class="panel-stage grey">
+                    <img src="./images/profile-male.png" class="img-responsive img-circle white">
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-xs-8 col-md-6">
+                <div class="panel-wrapper">
+                  <div class="panel-title">
+
+                  </div>
+                  <div class="panel-stage">
+                    {{emp.jobTitle}} with
+                    <span class="badge">{{emp.years_of_exp}} years</span>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="panel-wrapper">
+                  <div class="panel-title">
+                    Skills
+                  </div>
+                  <div class="panel-stage">
+                    <span ng-repeat="skill in emp.skills">
+                      <span class="badge">{{skill}}</span>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-notes">
+            Works in Google Project
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

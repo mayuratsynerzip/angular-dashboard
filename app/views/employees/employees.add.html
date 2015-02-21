@@ -1,0 +1,44 @@
+<script>
+  $('#skills').selectize({
+    delimiter: ',',
+    persist: false,
+    create: function(input) {
+      return {
+        value: input,
+        text: input
+      }
+    }
+  });
+</script>
+
+<div class="container">
+  <form role="form">
+    <div class="form-group">
+      <label for="fname">First name:</label>
+      <input type="text" class="form-control" id="fname" ng-model="emp.firstName" placeholder="Enter Organiztion Name">
+    </div>
+    <div class="form-group">
+      <label for="lname">Last name:</label>
+      <input type="text" class="form-control"  id="lname" ng-model="emp.lastName" placeholder="Enter Owner" required>
+    </div>
+    <div class="form-group">
+      <label for="chJobTitle">Job Title:</label>
+      <select ng-model="emp.jobTitle" id="chjobtitle" ng-options="o as o for o in jobTitleList">
+        <option value="">Select Account</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="skills">Skills:</label>
+      <input type="text" id="skills" ng-model="emp.skills">
+    </div>
+    <div class="form-group">
+      <label for="yox">Years of experiance:</label>
+      <input type="text" class="form-control" id="yox" ng-model="emp.years_of_exp" placeholder="Billable Count" >
+    </div>
+    <div class="form-group">
+      <label for="billable">Billable:</label>
+      <input type="checkbox"   id="billable" ng-model="emp.billable" placeholder="Bench Strength">
+    </div>
+    <button class="btn btn-primary" ng-click="addEmployee()"><i class="glyphicon glyphicon-plus-sign"></i>&nbsp;Add Employee</button>
+  </form>
+</div>
